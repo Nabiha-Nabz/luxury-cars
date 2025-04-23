@@ -1,0 +1,490 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+/* ===== Navbar Styling ===== */
+/* Glass Navbar */
+.glass-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+}
+.logo span {
+    color: #ff0000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #b0b0b0; /* Light grey links */
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+nav ul li a:hover, nav ul li a.active {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('../images/hero-bg.jpg') no-repeat center/cover;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ff0000, #800000);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+.cta-button:hover {
+    transform: translateY(-5px);
+}
+
+/* Showroom Section */
+.showroom {
+    padding: 5rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.glow-red {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255, 0, 0, 0.7);
+    margin-bottom: 2rem;
+}
+
+.glow-red span {
+    color: #ff0000;
+}
+
+/* Car Buttons */
+.car-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.car-btn {
+    padding: 0.8rem 1.5rem;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.car-btn:hover {
+    background: #ff0000;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.car-btn.active {
+    background: #ff0000;
+    color: #fff;
+    border-color: #ff0000;
+}
+
+/* Car Display */
+.car-display {
+    margin-top: 2rem;
+}
+
+.car-image {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.car-info {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 8px;
+    border-top: 3px solid #ff0000;
+}
+
+.car-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.car-info p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.car-info p:first-of-type {
+    color: #ff0000;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #1a1a1a;
+    margin-top: 3rem;
+}
+/* Glassmorphism Navbar */
+.glass-nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.logo span {
+    color: #ff0000;
+    font-weight: 300;
+}
+
+nav ul li a {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+}
+nav ul li a span {
+    position: relative;
+    z-index: 1;
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.2));
+    transition: width 0.5s ease;
+}
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+/* Animated Hero */
+#dynamic-text {
+    font-size: 5rem;
+    background: linear-gradient(45deg, #fff, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: pulse 3s infinite;
+}
+.racing-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    margin: 1rem 0;
+    animation: race 2s linear infinite;
+}
+.racing-car {
+    width: 200px;
+    position: absolute;
+    right: -200px;
+    animation: drive 4s linear infinite;
+}
+
+/* 3D Flip Cards */
+.car-grid {
+    perspective: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.car-card {
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+.car-card:hover {
+    transform: rotateY(180deg);
+}
+.car-card-front, .car-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.car-card-back {
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
+    100% { opacity: 0.8; }
+}
+@keyframes race {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+@keyframes drive {
+    0% { right: -200px; }
+    100% { right: 100%; }
+}
+
+/* Contact Page Map */
+#map {
+    height: 300px;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 8px;
+    border: 1px solid #ff0000;
+}
+
+/* Animations  */
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
+    100% { opacity: 0.8; }
+}
+@keyframes race {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+@keyframes drive {
+    0% { right: -200px; }
+    100% { right: 100%; }
+}
+
+/* Contact Form Enhancements */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.contact-form button {
+    background: linear-gradient(45deg, #ff0000, #800000);
+    transition: transform 0.3s;
+}
+.contact-form button:hover {
+    transform: translateY(-3px);
+}
+/* ===== CONTACT PAGE STYLES ===== */
+.contact {
+    padding: 5rem 0;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.contact h2 span {
+    color: #ff0000;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Map Styles */
+#map {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    margin: 2rem auto 0;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+}
+
+/* Contact Form Styles */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ff0000, #800000);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(45deg, #800000, #ff0000);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Active Button Style */
+.car-btn.active {
+    background: #ff0000;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Smooth Transitions */
+.car-image {
+    transition: opacity 0.3s ease;
+}
+
+.car-info {
+    transition: all 0.3s ease;
+}

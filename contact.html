@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXURY MOTORS | Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">LUXURY<span>MOTORS</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li><a href="showroom.html"><span>Showroom</span></a></li>
+                    <li><a href="contact.html" class="active"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2>CONTACT <span>US</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ contact@luxurymotors.com</p>
+                    <p>📍 123 Elite Avenue, Monaco</p>
+                    <div id="map"></div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 LUXURY MOTORS | Crafted for the Extraordinary</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Initialize Map
+        const map = L.map('map').setView([43.7384, 7.4246], 15); // Monaco coordinates
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        L.marker([43.7384, 7.4246]).addTo(map)
+            .bindPopup('LUXURY MOTORS HQ');
+    </script>
+</body>
+</html>

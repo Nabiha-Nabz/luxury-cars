@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUXURY MOTORS | Showroom</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap"/>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="glass-nav">
+    <div class="nav-container">
+      <div class="logo">LUXURY<span>MOTORS</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="showroom.html" class="active">Showroom</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="showroom">
+    <h2 class="glow-red">ICONIC <span>COLLECTION</span></h2>
+    
+    <div class="car-buttons">
+      <button data-car="ferrari" class="car-btn active">Ferrari</button>
+      <button data-car="bmw" class="car-btn">BMW</button>
+      <button data-car="mercedes" class="car-btn">Mercedes</button>
+      <button data-car="ariel" class="car-btn">Ariel</button>
+      <button data-car="maserati" class="car-btn">Maserati</button>
+      <button data-car="pagani" class="car-btn">Pagani</button>
+    </div>
+
+    <div class="car-display">
+      <img src="images/ferrari.png" id="car-image" class="car-image" />
+      <div class="car-info" id="car-info">
+        <h3>Ferrari SF90 Stradale</h3>
+        <p class="specs">0-60mph: 2.5s | 986 HP Hybrid V8</p>
+        <p class="description">The SF90 Stradale is Ferrari's first series production PHEV, combining brutal acceleration with cutting-edge hybrid technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 LUXURY MOTORS</p>
+  </footer>
+
+  <!-- Keep your animation effects -->
+  <script src="js/animation.js"></script>
+
+  <!-- Working car switcher script -->
+  <script>
+    const carData = {
+      ferrari: {
+        image: 'images/ferrari.png',
+        title: 'Ferrari SF90 Stradale',
+        specs: '0-60mph: 2.5s | 986 HP Hybrid V8',
+        description: "The SF90 Stradale is Ferrari's first series production PHEV, combining brutal acceleration with cutting-edge hybrid technology."
+      },
+      bmw: {
+        image: 'images/bmw.png',
+        title: 'BMW M8 Competition',
+        specs: '0-60mph: 3.0s | 617 HP V8',
+        description: "The M8 Competition blends aggressive styling with refined luxury and race-bred performance."
+      },
+      mercedes: {
+        image: 'images/mercedes.png',
+        title: 'Mercedes-AMG GT Black Series',
+        specs: '0-60mph: 3.1s | 720 HP Twin-Turbo V8',
+        description: "Track-focused yet street-legal, the Black Series is the ultimate expression of AMG engineering."
+      },
+      ariel: {
+        image: 'images/ariel.png',
+        title: 'Ariel Atom 4',
+        specs: '0-60mph: 2.8s | 320 HP',
+        description: "Minimalist and thrilling, the Atom 4 strips driving to its purest form with open-wheel agility."
+      },
+      maserati: {
+        image: 'images/maserati.png',
+        title: 'Maserati MC20',
+        specs: '0-60mph: 2.9s | 621 HP V6',
+        description: "The MC20 marks Maserati’s return to the supercar world with Italian flair and innovation."
+      },
+      pagani: {
+        image: 'images/pagani.png',
+        title: 'Pagani Huayra R',
+        specs: '0-60mph: 3.0s | 850 HP V12',
+        description: "A masterpiece of carbon fiber and speed, the Huayra R is a symphony of bespoke craftsmanship and performance."
+      }
+    };
+
+    document.querySelectorAll('.car-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const model = this.getAttribute('data-car');
+        const car = carData[model];
+        if (!car) return;
+
+        // Update image and info
+        document.getElementById('car-image').src = car.image;
+        document.getElementById('car-info').innerHTML = `
+          <h3>${car.title}</h3>
+          <p class="specs">${car.specs}</p>
+          <p class="description">${car.description}</p>
+        `;
+
+        // Update active button
+        document.querySelectorAll('.car-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
